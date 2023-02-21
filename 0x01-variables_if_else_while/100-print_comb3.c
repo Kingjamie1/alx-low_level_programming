@@ -1,25 +1,30 @@
 #include <stdio.h>
 
 /**
- * main - prints all  combination of single digits numbers
- *
- * Return: Always 0
+ * main - prints the numbers from 00 to 99, numbers separated by
+ * a comma followed by a space, in ascending order.
+ * Return: always 0
  */
 int main(void)
 {
-	int n;
+	int digit1, digit2;
 
-	for (n = 0; n <= 9; n++)
+	for (digit1 = 0; digit1 < 10; digit1++)
 	{
-		putchar(n % 10) + '0');
-	        if (n == 9)
-		   continue;
+		for (digit2 = 0; digit2 < 10; digit2++)
 
-		putchar(',');
-		putchar(',');
+		{
+			putchar((digit1 % 10) + '0');
+			putchar((digit2 % 10) + '0');
+
+			if (digit1 == 9 && digit2 == 9)
+				continue;
+
+			putchar(',');
+			putchar(' ');
+		}
 	}
 
-	 putchar('\n');
-
-	 return (0);
-} 
+	putchar('\n');
+	return (0);
+}
